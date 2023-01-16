@@ -7,7 +7,7 @@ describe("FundMe", async function () {
     let fundMe
     let deployer
     let mockV3Aggregator
-    const sendValue = ethers.utils.parseEther("51");
+    const sendValue = ethers.utils.parseEther("1");
     beforeEach(async function () {
         // const accounts=await ethers.getSigners()
         // const accountZero=account[0]

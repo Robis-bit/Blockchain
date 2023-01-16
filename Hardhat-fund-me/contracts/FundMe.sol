@@ -22,7 +22,7 @@ contract FundMe {
     address[] private s_funders;
 
     address private immutable i_owner;
-    uint256 public constant MINIMUM_USD = 50*1e18;
+    uint256 public constant MINIMUM_USD=1e18; //(1*10)**18
     AggregatorV3Interface private s_priceFeed;
 
     //modifier

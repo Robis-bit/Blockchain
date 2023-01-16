@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@chainlink/contracts": "^0.5.1",
+    "@chainlink/contracts": "^0.6.0",
     "@ethersproject/abi": "^5.4.7",
     "@ethersproject/providers": "^5.4.7",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
@@ -21,9 +21,8 @@
   "dependencies": {
     "dotenv": "^16.0.3"
   },
-
   "scripts": {
-    "test":"yarn hardhat test",
-    "test:staging":"yarn hardhat test --network goerli"
+    "test": "yarn hardhat test",
+    "test:staging": "yarn hardhat test --network goerli"
   }
 }

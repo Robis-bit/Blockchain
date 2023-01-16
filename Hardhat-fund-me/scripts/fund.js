@@ -7,7 +7,7 @@ async function main() {
 //   console.log(`Got contract FundMe at ${fundMe.address}`)
   console.log("Funding contract...")
   const transactionResponse = await fundMe.fund({
-    value: ethers.utils.parseEther("51"),
+    value: ethers.utils.parseEther("1"),
   })
   await transactionResponse.wait()
   console.log("Funded!")
