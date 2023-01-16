@@ -4,7 +4,7 @@
 pragma solidity ^0.8.7;
 
 //import
-import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+
 import "./PriceConverter.sol";
 
 //Error handler
@@ -22,7 +22,7 @@ contract FundMe {
     address[] private s_funders;
 
     address private immutable i_owner;
-    uint256 public constant MINIMUM_USD = 50 * 10 ** 18; //50*1e18;
+    uint256 public constant MINIMUM_USD = 50*1e18;
     AggregatorV3Interface private s_priceFeed;
 
     //modifier
@@ -38,16 +38,17 @@ contract FundMe {
         i_owner = msg.sender;
     }
 
-    function fund() public payable {
-        require(
-            msg.value.getConversionRate(s_priceFeed) >= MINIMUM_USD,
-            "You need to spend more ETH!"
-        );
-        // require(PriceConverter.getConversionRate(msg.value) >= MINIMUM_USD, "You need to spend more ETH!");
-        // msg.value.getConversionRate(priceFeed);
-        s_addressToAmountFunded[msg.sender] += msg.value;
+   
+    function fund() public payable{
+        //want to able to set a minimum fund amount
+        //1. How do we send eth to this contract?
+
+        require(msg.value.getConversionRate(s_priceFeed) >= MINIMUM_USD,"Didn't send enough");
+        //18 decimals
         s_funders.push(msg.sender);
+        s_addressToAmountFunded[msg.sender]+=msg.value;
     }
+   
 
     function withdraw() public payable onlyOwner {
         for (
@@ -64,6 +65,14 @@ contract FundMe {
             value: address(this).balance
         }("");
         require(callSuccess, "Call failed");
+    }
+
+    receive() external payable{
+        fund();
+    }
+    
+    fallback() external payable{
+        fund();
     }
 
     function cheaperWithdraw() public payable onlyOwner {

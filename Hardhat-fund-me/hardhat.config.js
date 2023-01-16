@@ -13,6 +13,7 @@ const COINMARKETCAP_API_KEY=process.env.COINMARKETCAP_API_KEY
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
    defaultNetwork:"hardhat",
+   
   networks :{
     goerli:{
       url: GOERLI_RPC_URL,
@@ -22,6 +23,7 @@ module.exports = {
     },
     localhost: {
       url:"http://127.0.0.1:8545/",
+      allowUnlimitedContractSize: true,
       // chainId:"31337",
     }
   },
@@ -54,5 +56,7 @@ module.exports = {
     currency:"USD",
     coinmarketcap:COINMARKETCAP_API_KEY,
     token:"ETH"
-  }
+  },
+  gas: 2100000,
+  gasPrice: 8000000000,
 };

@@ -1,0 +1,50 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js install
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Users/acer/anaconda3:/mnt/c/Users/acer/anaconda3/Library/mingw-w64/bin:/mnt/c/Users/acer/anaconda3/Library/usr/bin:/mnt/c/Users/acer/anaconda3/Library/bin:/mnt/c/Users/acer/anaconda3/Scripts:/mnt/c/Users/acer/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/acer/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin:/mnt/c/ProgramData/acer/GitHubDesktop/bin:/mnt/c/Users/acer/AppData/Local/GitHubDesktop/bin:/mnt/c/Program Files/MongoDB/Server/5.0/bin:/mnt/c/Users/acer/AppData/Roaming/npm:/snap/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.19.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: connect ENETUNREACH 104.16.19.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16)
+
+npm manifest: 
+  {
+    "devDependencies": {
+      "@chainlink/contracts": "^0.5.1",
+      "@ethersproject/abi": "^5.4.7",
+      "@ethersproject/providers": "^5.4.7",
+      "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
+      "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+      "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+      "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
+      "@nomiclabs/hardhat-etherscan": "^3.1.4",
+      "@typechain/ethers-v5": "^10.1.0",
+      "@typechain/hardhat": "^6.1.2",
+      "chai": "^4.2.0",
+      "ethers": "^5.7.2",
+      "hardhat": "^2.12.5",
+      "hardhat-deploy": "^0.11.22",
+      "hardhat-gas-reporter": "^1.0.9",
+      "solidity-coverage": "^0.8.2",
+      "typechain": "^8.1.0"
+    },
+    "dependencies": {
+      "dotenv": "^16.0.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
