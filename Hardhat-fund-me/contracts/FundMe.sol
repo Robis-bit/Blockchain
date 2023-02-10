@@ -22,7 +22,7 @@ contract FundMe {
     address[] private s_funders;
 
     address private immutable i_owner;
-    uint256 public constant MINIMUM_USD=1e18; //(1*10)**18
+    uint256 public constant MINIMUM_USD=50*1e18; //(1*10)**18
     AggregatorV3Interface private s_priceFeed;
 
     //modifier
@@ -45,8 +45,9 @@ contract FundMe {
 
         require(msg.value.getConversionRate(s_priceFeed) >= MINIMUM_USD,"Didn't send enough");
         //18 decimals
-        s_funders.push(msg.sender);
         s_addressToAmountFunded[msg.sender]+=msg.value;
+        s_funders.push(msg.sender);
+        
     }
    
 
